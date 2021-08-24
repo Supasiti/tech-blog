@@ -11,7 +11,7 @@ router.get('/', async (req, res) => {
     const posts = sanitize(rawPosts);
     console.log('all posts:', posts);
 
-
+    console.log('date :', posts[0].createdAt.toLocaleDateString())
     res.render('homepage', {
       pageTitle: 'The Tech Blog',
       posts
