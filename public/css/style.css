@@ -72,11 +72,23 @@ a {
 .text-bean {
   color: var(--black-bean)
 }
-.text-bean {
+.text-fern {
   color: var(--fern)
 }
 
 /* round-border */
 .border-round {
   border-radius: var(--border-radius) !important
+}
+
+
+
+/*  */
+
+.form-signin {
+  width: 100%;
+  max-width: 330px;
+  padding: 15px;
+  margin: auto;
+  text-align: center;
 }
