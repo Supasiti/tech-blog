@@ -13,25 +13,26 @@ const create = async (user) => {
   return newUser
 }
 
-
-// get all users
-// return - Array<User>
-const getAll = async () => {
-  const newUsers = await models.User.findAll();
-  return newUsers
-}
-
 // authenticate user
 // return 
 //   User if the user and password is valid else null
 const authenticate = async ( data ) => {
+  console.log('userService.authenticate:',  data);
+
   const user = await models.User.findOne({ where : { email : data.email }});
   if ( !user ) return null;
 
   const result = await bcrypt.compare(data.password, user.password);
   return result? user : null;
-}
+};
 
+
+// get all users
+// return - Array<User>
+const getAll = async () => {
+  const newUsers = await models.User.findAll();
+  return newUsers;
+}
 
 
 module.exports = {
