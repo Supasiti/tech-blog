@@ -1,5 +1,7 @@
 <h1>Hi, {{user.username}}</h1>
 
 {{#each posts as |post|}}
-  {{> postCard}}
+  <a href="/posts/{{id}}/edit">
+    {{> postCard}}
+  </a>
 {{/each}}

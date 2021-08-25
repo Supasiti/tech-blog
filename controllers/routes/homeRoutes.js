@@ -30,6 +30,7 @@ router.get('/login', (req, res) => {
     return;
   }
   res.render('login', {
+    pageTitle: 'The Tech Blog',
     loggedIn: req.session.logged_in,
   });
 });
@@ -41,6 +42,7 @@ router.get('/signup', (req, res) => {
     return;
   }
   res.render('signup', {
+    pageTitle: 'The Tech Blog',
     loggedIn: req.session.logged_in,
   });
 });
@@ -53,6 +55,7 @@ router.get('/dashboard', withAuth, async (req, res) => {
   const postsData = sanitize(rawPostsData);
 
   res.render('dashboard', {
+    pageTitle: 'Dashboard',
     loggedIn: req.session.logged_in,
     user: req.session.user,
     posts: postsData
