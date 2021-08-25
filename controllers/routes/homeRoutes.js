@@ -31,7 +31,7 @@ router.get('/login', (req, res) => {
   });
 });
 
-// login page
+// signup page
 router.get('/signup', (req, res) => {
   if (req.session.logged_in) {
     res.redirect('/');
@@ -44,10 +44,16 @@ router.get('/signup', (req, res) => {
 
 
 // dashboard page
-router.get('/dashboard', withAuth, (req, res) => {
-
+router.get('/dashboard', withAuth, async (req, res) => {
+  const userData = req.session.user;
+  const rawPostsData = await postServices.getAllByUserId(userData.id)
+  const postsData = sanitize(rawPostsData);
+  
+  console.log('dashboard: ', postsData);
   res.render('dashboard', {
     loggedIn: req.session.logged_in,
+    user: req.session.user,
+    posts: postsData
   });
 });
 
