@@ -1,0 +1,29 @@
+<div class="card my-5 bg-fern text-bean border-round">
+  <h4 class="card-header bg-bean text-secondary py-3 border-round">
+    Your Comment
+  </h4>
+  <div class="card-body py-4">
+    
+    {{!-- form --}}
+    <form class="add-comment-form" novalidate>
+      <div class="mb-3">
+        <label 
+          for="add-comment-textarea" 
+          class="form-label">Comment</label>
+        <textarea 
+          class="form-control" 
+          id="add-comment-textarea" 
+          rows="3"></textarea>
+      </div>
+
+      <button 
+        class="w-100 btn btn-lg bg-parsley text-fern" 
+        type="submit">
+        Submit
+      </button>
+    </form>
+  </div>
+
+  <script src='/js/addComment.js'></script>
+</div>
+

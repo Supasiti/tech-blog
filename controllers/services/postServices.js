@@ -1,4 +1,5 @@
 const models = require('../../models');
+const commentServices = require('./commentServices');
 
 
 // get all posts
@@ -50,7 +51,19 @@ const getOneById = async ( postId ) => {
   return postData;
 }
 
+
+// add comment to a post 
+// return  
+//  - Post including comments and user
+const addComment = async ( commentData ) => {
+  const { postId } = commentData; 
+  const comment = await commentServices.create(commmentData);
+  const result = await getOneById(postId);
+  return result;
+}
+
 module.exports = {
+  addComment,
   getAll,
   getAllByUserId,
   getOneById
