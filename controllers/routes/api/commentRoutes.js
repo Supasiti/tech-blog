@@ -7,7 +7,9 @@ const sanitize = require('../../services/sanitize')
 
 router.post('/', async (req, res) => {
   try {
-    const rawComment = await commentServices.create(req.body);
+    const userId = req.session.user.id;
+    const commentData = {...req.body, userId }
+    const rawComment = await commentServices.create(commentData);
     const comment = sanitize(rawComment);
     res.status(200).json(comment)
   } catch (err) {

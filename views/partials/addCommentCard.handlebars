@@ -3,9 +3,9 @@
     Your Comment
   </h4>
   <div class="card-body py-4">
-    
+
     {{!-- form --}}
-    <form class="add-comment-form" novalidate>
+    <form id="add-comment-form" novalidate>
       <div class="mb-3">
         <label 
           for="add-comment-textarea" 
@@ -13,7 +13,8 @@
         <textarea 
           class="form-control" 
           id="add-comment-textarea" 
-          rows="3"></textarea>
+          rows="3" 
+          required></textarea>
       </div>
 
       <button 
@@ -24,6 +25,7 @@
     </form>
   </div>
 
+  <script src='/js/addFormValidation.js'></script>
   <script src='/js/addComment.js'></script>
 </div>
 
