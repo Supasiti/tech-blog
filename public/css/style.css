@@ -3,7 +3,9 @@
   --laurel: #378E40;
   --parsley: #235B29;
   --black-bean: #1a2c1b; 
+  --tomato: #F55B56;
   --border-radius: 4px;
+
 }
 
 html {
@@ -74,6 +76,9 @@ a {
 }
 .text-fern {
   color: var(--fern)
+}
+.text-tomato {
+  color: var(--tomato)
 }
 
 /* round-border */
