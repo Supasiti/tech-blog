@@ -16,13 +16,12 @@ router.post('/login', async (req, res) => {
     const userWithPassword = sanitize(rawUser);
     const { password, ...userWithoutPassword } = userWithPassword;
 
-    // req.session.save(() => {
-    //     req.session.user_id = userWithoutPassword.id;
-    //     req.session.logged_in = true;
-        
-        
-    //   });
-    res.json({ user: userWithoutPassword, message: 'You are now logged in!' });
+    req.session.save(() => {
+      req.session.user = userWithoutPassword;
+      req.session.logged_in = true;
+      
+      res.json({ user: userWithoutPassword, message: 'You are now logged in!' });
+    });
   } catch (err) {
     res.status(400).json(err);
   }

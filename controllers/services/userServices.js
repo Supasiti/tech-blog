@@ -17,8 +17,6 @@ const create = async (user) => {
 // return 
 //   User if the user and password is valid else null
 const authenticate = async ( data ) => {
-  console.log('userService.authenticate:',  data);
-
   const user = await models.User.findOne({ where : { email : data.email }});
   if ( !user ) return null;
 

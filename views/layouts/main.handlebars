@@ -25,13 +25,34 @@
           </h3>
 
           <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-            <li><a href="#" class="nav-link px-2 text-secondary">Home</a></li>
-            <li><a href="#" class="nav-link px-2 text-white">Dashboard</a></li>
+            <li><a href="/" class="nav-link px-2 text-secondary">Home</a></li>
+            {{#if loggedIn}}
+              <li><a href="/dashboard" class="nav-link px-2 text-white">Dashboard</a></li>
+            {{/if}}
           </ul>
 
           <div class="col-md-3 text-end">
-            <button id='btn-login' type="button" class="btn btn-outline-light me-2">Login</button>
-            <button id='btn-signup' type="button" class="btn btn-warning">Sign-up</button>
+            {{#if loggedIn}}
+              <button 
+                id='btn-logout' 
+                type="button" 
+                class="btn btn-outline-light me-2">
+                Logout
+              </button>
+            {{else}}
+              <button 
+                id='btn-login' 
+                type="button" 
+                class="btn btn-outline-light me-2">
+                Login
+              </button>
+              <button 
+                id='btn-signup' 
+                type="button" 
+                class="btn btn-warning">
+                Sign up
+              </button>
+            {{/if}}
           </div>
         </div>
       </div>
@@ -51,6 +72,11 @@
       integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" 
       crossorigin="anonymous">
     </script>
-    <script src='/js/header.js'></script>
+    
+    {{#if loggedIn }}
+      <script src='/js/logout.js'></script>
+    {{else}}
+      <script src='/js/gotoLogin.js'></script>
+    {{/if}}
   </body>
 </html>

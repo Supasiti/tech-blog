@@ -8,7 +8,6 @@ const goToLoginHandler = async (event) => {
 
 const goToSignUpHandler = async (event) => {
   event.preventDefault();
-  console.log('sign up button clicked')
   document.location.replace('/signup');
 }
 
