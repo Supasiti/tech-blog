@@ -4,6 +4,6 @@
     <p class="card-text">{{content}}</p>
   </div>
   <div class="card-footer bg-parsley text-fern border-round">
-    {{format_date createdAt}} - {{format_time createdAt}}   {{#if user}} --- by {{user.username}} {{/if}}
+    {{#if user}}Posted by {{user.username}} {{/if}} on {{format_date createdAt}} {{#if user}}by {{user.username}} {{/if}}
   </div>
 </div>

@@ -50,6 +50,7 @@ p {
 a {
   color: var(--black-bean);
   font-size: 1.2rem;
+  text-decoration: none;
   cursor: pointer;
 }
 

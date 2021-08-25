@@ -1,0 +1,16 @@
+{{#with post}}
+  {{> postCard }}
+
+  {{#each comments as | comment |}}
+    {{> commentCard }}
+  {{/each}}
+{{/with}}
+
+<div class="d-flex align-items-center justify-content-center mt-4">
+  <button 
+    id='btn-add-comment' 
+    type="button" 
+    class="btn btn-outline-light me-2">
+    Add comment
+  </button>
+</div>

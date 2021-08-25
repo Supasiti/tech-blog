@@ -1,9 +1,12 @@
 const router = require('express').Router();
 const withAuth = require('../../utils/auth');
-const postServices = require('../services/postServices')
-const sanitize = require('../services/sanitize')
+const postServices = require('../services/postServices');
+const sanitize = require('../services/sanitize');
+const postRoutes = require('./postRoutes');
 
 // route:  /
+
+router.use('/posts', postRoutes);
 
 // homepage
 router.get('/', async (req, res) => {
@@ -48,8 +51,7 @@ router.get('/dashboard', withAuth, async (req, res) => {
   const userData = req.session.user;
   const rawPostsData = await postServices.getAllByUserId(userData.id)
   const postsData = sanitize(rawPostsData);
-  
-  console.log('dashboard: ', postsData);
+
   res.render('dashboard', {
     loggedIn: req.session.logged_in,
     user: req.session.user,
