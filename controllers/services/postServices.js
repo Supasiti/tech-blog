@@ -48,23 +48,26 @@ const getOneById = async ( postId ) => {
       }
     ]
   })
-  return postData;
+  return postData.length? postData[0] : null ;
+}
+
+// update a post
+// return 
+//  - int
+const update = async (newPost) => {
+  const { postId } = newPost;
+  const postsUpdated = await models.Post.update(newPost, {
+    where: {id : postId }
+  }) 
+  return postsUpdated;
 }
 
 
-// add comment to a post 
-// return  
-//  - Post including comments and user
-const addComment = async ( commentData ) => {
-  const { postId } = commentData; 
-  const comment = await commentServices.create(commmentData);
-  const result = await getOneById(postId);
-  return result;
-}
 
 module.exports = {
-  addComment,
+
   getAll,
   getAllByUserId,
-  getOneById
+  getOneById,
+  update,
 }
