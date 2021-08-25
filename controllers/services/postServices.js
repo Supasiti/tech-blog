@@ -63,11 +63,20 @@ const update = async (newPost) => {
 }
 
 
+// delete a post
+// return - int
+const remove = async (postId) => {
+  const postsRemoved = await models.Post.destroy({
+    where: { id: postId }
+  })
+  return postsRemoved;
+} 
 
 module.exports = {
 
   getAll,
   getAllByUserId,
   getOneById,
+  remove,
   update,
 }

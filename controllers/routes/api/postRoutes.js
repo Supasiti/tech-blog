@@ -17,6 +17,17 @@ router.post('/:id', async (req, res) => {
   }
 })
 
+// delete
+router.delete('/:id', async (req, res) => {
+  try {
+    const postId = req.params.id;
+    const postsRemoved = await postServices.remove(postId);
+    res.status(200).json({ message : 'The post has been deleted'})
+  } catch (err) {
+    res.status(400).json(err)
+  }
+})
+
 // get all
 router.get('/', async (req, res) => {
   try {
