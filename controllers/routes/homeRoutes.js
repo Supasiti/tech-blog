@@ -1,11 +1,11 @@
 const router = require('express').Router();
-// const { User } = require('../models');
-// const withAuth = require('../utils/auth');
+const withAuth = require('../../utils/auth');
 const postServices = require('../services/postServices')
 const sanitize = require('../services/sanitize')
 
 // route:  /
 
+// homepage
 router.get('/', async (req, res) => {
   try {
     const rawPosts = await postServices.getAll();
@@ -20,7 +20,7 @@ router.get('/', async (req, res) => {
   }
 });
 
-
+// login page
 router.get('/login', (req, res) => {
   if (req.session.logged_in) {
     res.redirect('/');
@@ -31,12 +31,22 @@ router.get('/login', (req, res) => {
   });
 });
 
+// login page
 router.get('/signup', (req, res) => {
   if (req.session.logged_in) {
     res.redirect('/');
     return;
   }
   res.render('signup', {
+    loggedIn: req.session.logged_in,
+  });
+});
+
+
+// dashboard page
+router.get('/dashboard', withAuth, (req, res) => {
+
+  res.render('dashboard', {
     loggedIn: req.session.logged_in,
   });
 });

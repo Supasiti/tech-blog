@@ -1,0 +1,9 @@
+<div class="card mb-5 bg-fern text-bean border-round">
+  <h4 class="card-header bg-bean text-secondary py-3 border-round">{{title}}</h4>
+  <div class="card-body py-4">
+    <p class="card-text">{{content}}</p>
+  </div>
+  <div class="card-footer bg-parsley text-fern border-round">
+    {{format_date createdAt}} - {{format_time createdAt}}   --- by {{user.username}}
+  </div>
+</div>
