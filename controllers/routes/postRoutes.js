@@ -5,6 +5,21 @@ const sanitize = require('../services/sanitize');
 
 // route:  /posts/
 
+// create new 
+router.get('/add', withAuth, async (req, res) => {
+  try {
+    console.log('GET posts/add');
+
+    res.render('postAdd', {
+      pageTitle: 'Dashboard',
+      loggedIn: req.session.logged_in
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+// see post
 router.get('/:id', withAuth, async (req, res) => {
   try {
     const postId = req.params.id;
@@ -41,7 +56,6 @@ router.get('/:id/edit', withAuth, async (req, res) => {
     res.render('postEdit', {
       pageTitle: 'Dashboard',
       loggedIn: req.session.logged_in,
-      createPost: false,
       post: postData
     });
 
@@ -49,5 +63,6 @@ router.get('/:id/edit', withAuth, async (req, res) => {
     res.status(500).json(err);
   }
 });
+
 
 module.exports = router;

@@ -1,7 +1,18 @@
 <h1>Hi, {{user.username}}</h1>
 
+
 {{#each posts as |post|}}
   <a href="/posts/{{id}}/edit">
     {{> postCard}}
   </a>
 {{/each}}
+
+<div class="container d-flex flex-row justify-content-center">
+  <button 
+    id="go-to-add-post-btn"
+    class="btn btn-lg bg-parsley text-fern ">
+    New Post
+  </button>
+</div>
+
+<script src='/js/goToAddPost.js'></script>

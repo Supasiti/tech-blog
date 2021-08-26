@@ -1,49 +1,16 @@
 {{#> card title="Edit Post"}}
-  <div class="card-body py-4">
-
-    {{!-- form --}}
-    <form id="edit-post-form" novalidate>
-      
-      {{!-- title  --}}
-      <div class="mb-3">
-        <label 
-          for="post-title-input" 
-          class="form-label">Title</label>
-        <input 
-          type="text" 
-          class="form-control" 
-          id="post-title-input" 
-          placeholder="Your Amazing Post Title"
-          value="{{post.title}}" 
-          required>
-      </div>
-        
-      {{!-- content  --}}
-      <div class="mb-3">
-        <label 
-          for="post-content-textarea" 
-          class="form-label">Content</label>
-        <textarea 
-          class="form-control" 
-          id="post-content-textarea" 
-          rows="3"
-          required>{{post.content}}</textarea>
-      </div>
-
-      <button 
-        class="w-100 btn btn-lg bg-parsley text-fern mb-3" 
-        type="submit">
-        Update
-      </button>
-      <button 
-        id="delete-post-btn"
-        class="w-100 btn btn-lg bg-parsley text-fern">
-        Delete
-      </button>
-    </form>
-    
-  </div>
-
+  {{#> postEditForm }}
+    <button 
+      class="btn btn-lg bg-parsley text-fern mx-3" 
+      type="submit">
+      Update
+    </button>
+    <button 
+      id="delete-post-btn"
+      class="btn btn-lg bg-parsley text-fern mx-3">
+      Delete
+    </button>
+  {{/postEditForm}}
 
   <script src='/js/addFormValidation.js'></script>
   <script src='/js/updatePost.js'></script>

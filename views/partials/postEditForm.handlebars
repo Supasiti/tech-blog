@@ -1,0 +1,38 @@
+<div class="card-body py-4">
+
+    {{!-- form --}}
+    <form id="edit-post-form" novalidate>
+      
+      {{!-- title  --}}
+      <div class="mb-3">
+        <label 
+          for="post-title-input" 
+          class="form-label">Title</label>
+        <input 
+          type="text" 
+          class="form-control" 
+          id="post-title-input" 
+          placeholder="Your Amazing Post Title"
+          value="{{post.title}}" 
+          required>
+      </div>
+        
+      {{!-- content  --}}
+      <div class="mb-3">
+        <label 
+          for="post-content-textarea" 
+          class="form-label">Content</label>
+        <textarea 
+          class="form-control" 
+          id="post-content-textarea" 
+          rows="3"
+          required>{{post.content}}</textarea>
+      </div>
+
+      <div class="container d-flex flex-row justify-content-center mt-4" >
+        {{!-- for buttons --}}
+        {{> @partial-block }}  
+      </div>
+    </form>
+    
+  </div>
