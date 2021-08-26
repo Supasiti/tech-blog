@@ -1,6 +1,12 @@
 const models = require('../../models');
 const commentServices = require('./commentServices');
 
+// create a post
+// return - Post
+const create = async (postData) => {
+  const newPost = await models.Post.create(postData)
+  return newPost;
+} 
 
 // get all posts
 // return - Array<Post>
@@ -73,7 +79,7 @@ const remove = async (postId) => {
 } 
 
 module.exports = {
-
+  create,
   getAll,
   getAllByUserId,
   getOneById,

@@ -6,6 +6,9 @@ const sanitize = require('../../services/sanitize')
 // route : api/posts/
 
 
+
+
+
 // update
 router.post('/:id', async (req, res) => {
   try {
@@ -32,6 +35,17 @@ router.delete('/:id', async (req, res) => {
 router.get('/', async (req, res) => {
   try {
     const rawPostData = await postServices.getAll();
+    const postData = sanitize(rawPostData);
+    res.status(200).json(postData)
+  } catch (err) {
+    res.status(400).json(err)
+  }
+})
+
+// create a new post
+router.post('/', async (req, res) => {
+  try {
+    const rawPostData = await postServices.create(req.body);
     const postData = sanitize(rawPostData);
     res.status(200).json(postData)
   } catch (err) {
