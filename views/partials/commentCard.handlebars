@@ -1,0 +1,6 @@
+{{#> card }}
+  <div class="card-body py-4">
+    <p class="card-text mb-3">{{content}}</p>
+    {{#if user}}by {{user.username}} {{/if}} on {{format_date createdAt}}
+  </div>
+{{/card }}

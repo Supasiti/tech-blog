@@ -1,0 +1,17 @@
+{{#> card title="Edit Post"}}
+  {{#> postEditForm }}
+    <button 
+      class="btn btn-lg bg-parsley text-fern mx-3" 
+      type="submit">
+      Update
+    </button>
+    <button 
+      id="delete-post-btn"
+      class="btn btn-lg bg-parsley text-fern mx-3">
+      Delete
+    </button>
+  {{/postEditForm}}
+
+  <script src='/js/addFormValidation.js'></script>
+  <script src='/js/updatePost.js'></script>
+{{/card}} 

@@ -1,0 +1,9 @@
+{{#with post}}
+  {{> postCard}}
+
+  {{#each comments as | comment |}}
+    {{> commentCard }}
+  {{/each}}  
+{{/with}}
+
+{{> addCommentCard}}

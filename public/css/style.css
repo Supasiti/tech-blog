@@ -1,0 +1,100 @@
+:root {
+  --fern: #63a86a;
+  --laurel: #378E40;
+  --parsley: #235B29;
+  --black-bean: #1a2c1b; 
+  --tomato: #F55B56;
+  --border-radius: 4px;
+
+}
+
+html {
+  font-size: 90%;
+  scroll-behavior: smooth;
+}
+body {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  background-color: var(--laurel);
+}
+
+h1,
+h2,
+h3,
+h4,
+p, a {
+  color: var(--black-bean);
+  letter-spacing: 1px;
+  line-height: 1.4;
+}
+
+h1 {
+  font-size: 4rem;
+  font-weight: 100;
+  line-height: 1.4;
+  text-transform: uppercase;
+  color: var(--fern);
+}
+
+h2 { font-size: 2rem; }
+h3 { font-size: 1.6rem;}
+h4 { 
+  color: var(--black-bean);
+  font-size: 1.4rem;
+}
+p {
+  color: var(--black-bean);
+  font-size: 1.2rem;
+}
+a {
+  color: var(--black-bean);
+  font-size: 1.2rem;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* background */
+.bg-bean {
+  background-color: var(--black-bean);
+}
+
+.bg-fern {
+  background-color: var(--fern);
+}
+
+.bg-laurel {
+  background-color: var(--laurel);
+}
+
+.bg-parsley {
+  background-color: var(--parsley);
+}
+
+/* text */
+.text-bean {
+  color: var(--black-bean)
+}
+.text-fern {
+  color: var(--fern)
+}
+.text-tomato {
+  color: var(--tomato)
+}
+
+/* round-border */
+.border-round {
+  border-radius: var(--border-radius) !important
+}
+
+
+
+/*  */
+
+.form-signin {
+  width: 100%;
+  max-width: 330px;
+  padding: 15px;
+  margin: auto;
+  text-align: center;
+}

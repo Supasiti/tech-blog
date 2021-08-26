@@ -1,0 +1,8 @@
+{{#> card }}
+  <div class="card-body py-4">
+    <p class="card-text">{{content}}</p>
+  </div>
+  <div class="card-footer bg-parsley text-fern border-round">
+    {{#if user}}Posted by {{user.username}} {{/if}} on {{format_date createdAt}}
+  </div>
+{{/card }}
