@@ -17,7 +17,7 @@ const getAll = async () => {
       attributes: { exclude: ['password'] }
     }],
     order : [
-      ['createdAt', 'ASC']
+      ['createdAt', 'DESC']
     ]
   });
   return result;
@@ -28,7 +28,7 @@ const getAllByUserId = async ( userId ) => {
   const result = await models.Post.findAll({
     where: { userId: userId },
     order : [
-      ['createdAt', 'ASC']
+      ['createdAt', 'DESC']
     ]
   });
   return result;
