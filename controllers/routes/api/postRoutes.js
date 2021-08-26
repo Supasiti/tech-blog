@@ -5,10 +5,6 @@ const sanitize = require('../../services/sanitize')
 
 // route : api/posts/
 
-
-
-
-
 // update
 router.post('/:id', async (req, res) => {
   try {
@@ -45,7 +41,13 @@ router.get('/', async (req, res) => {
 // create a new post
 router.post('/', async (req, res) => {
   try {
-    const rawPostData = await postServices.create(req.body);
+    const userId = req.session.user.id;
+    const newPostData = { ...req.body, userId };
+    if (!newPostData.userId) {
+      res.status(400).json({ message: 'Require userId to create a new post' })
+      return
+    }
+    const rawPostData = await postServices.create(newPostData);
     const postData = sanitize(rawPostData);
     res.status(200).json(postData)
   } catch (err) {
