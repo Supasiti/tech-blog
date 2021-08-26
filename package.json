@@ -5,8 +5,8 @@
   "main": "server.js",
   "scripts": {
     "test": "jest --watch",
-    "start": "nodemon server.js",
-    "seed": "node seeds/seed.js",
+    "start": "node server.js",
+    "seed":  "node seeds/seed.js",
     "setup": "node db/initDB.js"
   },
   "keywords": [],
