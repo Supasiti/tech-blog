@@ -7,7 +7,7 @@
     "test": "jest --watch",
     "start": "node server.js",
     "seed":  "node seeds/seed.js",
-    "setup": "node db/initDB.js"
+    "setup": "node db/initDB.js && node seeds/seed.js"
   },
   "keywords": [],
   "author": "Thara Supasiti",
