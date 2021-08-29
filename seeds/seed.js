@@ -19,7 +19,9 @@ const seedAll = async () => {
   await seedComments();
   console.log('\n----- Comments Seeded -----\n');
   
-  process.exit(0);
+  // process.exit(0);
 };
 
-seedAll();
+// seedAll();
+
+module.exports = seedAll;
